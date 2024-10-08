@@ -102,9 +102,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default WorkOrder = ({navigation}) => {
     const scheduleItem = ({item}) => {
         return (
-        <ScrollView  
-            
-        >
+        <View>
             <View style={{flexDirection:"row",marginHorizontal:26,marginBottom:15,justifyContent:"space-between"}}>
                 <View style={{flexDirection:"row"}}>
                     <Ionicons name="location-outline" size={15} color="#000"  />
@@ -132,14 +130,15 @@ export default WorkOrder = ({navigation}) => {
                 </View>
             </View>
             
-        </ScrollView >
+        </View >
                );
       };
     return (
-
+      <ScrollView >
         <View style={styles.container}>
-            <View style={styles.topview}>
-                <Text style={{position:"absolute",top:5,textAlign:"center",fontSize:30,color:"#fff",fontWeight:"bold"}}>Flete</Text>
+          
+          <View style={styles.topview}>
+                <Text style={{position:"absolute",top:5,textAlign:"center",fontSize:30,color:"#fff",fontWeight:"bold"}}>Fletes</Text>
             </View>
             <View style={styles.bottomview}>
                 <CustomCard elevated={true} style={{backgroundColor:"#fff",marginHorizontal:24,marginTop:-180,padding:30,borderRadius:10}}>
@@ -167,7 +166,10 @@ export default WorkOrder = ({navigation}) => {
                     />
                 </View>
             </View>
+          
+            
         </View>
+        </ScrollView>
     )
 }
 

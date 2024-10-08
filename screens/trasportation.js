@@ -21,10 +21,10 @@ export default Transportation = ({navigation}) => {
 
     return (
 
-        <View style={styles.container}>
-          
-          <View style={styles.topview}>
-                <Text style={{position:"absolute",top:5,textAlign:"center",fontSize:30,color:"#fff",fontWeight:"bold"}}>Flete</Text>
+
+          <View style={styles.container}>
+            <View style={styles.topview}>
+                  <Text style={{position:"absolute",top:5,textAlign:"center",fontSize:30,color:"#fff",fontWeight:"bold"}}>Flete</Text>
             </View>
             <View style={styles.bottomview}>
             <CustomCard elevated={true} style={{backgroundColor:"#fff",marginHorizontal:24,marginTop:-180,padding:30,borderRadius:10}}>
@@ -86,9 +86,10 @@ export default Transportation = ({navigation}) => {
               </View>
 
             </View>
+          </View>
           
             
-        </View>);
+    )
   }
   
   const styles = StyleSheet.create({

@@ -44,8 +44,9 @@ export default Home = ({navigation}) => {
     
     
     return (
-      
+      <ScrollView>
           <View style={styles.container}>
+            
               <View style={styles.topview}>
                   <View style={styles.welcomecontainer}>
                       <Text style={styles.welcomemessage}>{"Hola,<br/>Carlos Perez Gonzales".split("<br/>").join("\n")}</Text>
@@ -58,7 +59,7 @@ export default Home = ({navigation}) => {
                   </View>
               </View>
               <View style={styles.bottomview}>
-              <CustomCard elevated={true} style={{backgroundColor:"#fff",marginHorizontal:24,marginTop:-40,padding:30,borderRadius:10,flexDirection:"row",justifyContent:"space-between"}}>
+                <CustomCard elevated={true} style={{backgroundColor:"#fff",marginHorizontal:24,marginTop:-40,padding:30,borderRadius:10,flexDirection:"row",justifyContent:"space-between"}}>
                   <View style={{alignItems:"center"}}>
                     <Text style={{fontWeight:"bold", marginBottom:10}}>Semana</Text>
                     <Text style={{fontWeight:"bold",fontSize:18}}>15</Text>
@@ -82,7 +83,9 @@ export default Home = ({navigation}) => {
                 </View>
                 
                 </View>
+              
           </View>
+          </ScrollView>
        
         
     )
@@ -127,6 +130,8 @@ const styles = StyleSheet.create({
       backgroundColor:"#fff",
       borderTopLeftRadius:50,
       borderTopRightRadius:50,
+      width:'100%',
+      height: '100%'
     },
     container: {
       flex:1,

@@ -18,7 +18,7 @@ export default function App() {
         screenOptions={{
           headerShown: false
         }}
-        initialRouteName={'Login'}
+        initialRouteName={'Home'}
       >
         <Stack.Screen
           name="Home"
