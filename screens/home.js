@@ -85,7 +85,7 @@ export default Home = ({navigation}) => {
                 </View>
               
           </View>
-          </ScrollView>
+      </ScrollView>
        
         
     )
