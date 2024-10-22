@@ -3,12 +3,13 @@ import {
     StyleSheet,
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Image
 } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 import Slider from '@react-native-community/slider';
-
+import Button from '../components/ButtonGradient';
 
 export default Scanner = ({navigation}) => {
     const [hasCameraPermission, setHasCameraPermission] = useCameraPermissions();
@@ -158,8 +159,8 @@ export default Scanner = ({navigation}) => {
                 />
                 <View style={styles.sliderContainer}>
                   <Button 
-                  icon='zoom-out'
-                  onPress={zoomOut} size={undefined} color={undefined} style={undefined}              />
+                        icon='zoom-out'
+                        onPress={zoomOut} size={undefined} color={undefined} style={undefined}              />
                   <Slider 
                       style= {styles.slider}
                       minimumValue={0}
@@ -169,8 +170,8 @@ export default Scanner = ({navigation}) => {
                       step={0.1}
                   />
                   <Button 
-                  icon='zoom-in'
-                  onPress={zoomIn} size={undefined} color={undefined} style={undefined}              />
+                        icon='zoom-in'
+                        onPress={zoomIn} size={undefined} color={undefined} style={undefined}              />
                 </View>
                 <View style={styles.bottomControlsContainer}> 
                     <TouchableOpacity onPress={() => previousImage && setImage(previousImage)}>
@@ -181,14 +182,14 @@ export default Scanner = ({navigation}) => {
                     </TouchableOpacity>
                     
                     <Button 
-                  icon='camera'
-                  size={60}
-                  style={{ height: 60 }}
-                  onPress={takePicture} color={undefined}                />
+                        icon='camera'
+                        size={60}
+                        style={{ height: 60 }}
+                        onPress={takePicture} color={undefined}                />
                     <Button 
-                  icon='flip-camera-ios'
-                  onPress={() => toggleProperty('facing', 'front', 'back')}
-                  size={40} color={undefined} style={undefined}              />
+                        icon='flip-camera-ios'
+                        onPress={() => toggleProperty('facing', 'front', 'back')}
+                        size={40} color={undefined} style={undefined}              />
                 </View>
               </>
           ) : (

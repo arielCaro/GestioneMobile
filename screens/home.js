@@ -41,8 +41,6 @@ export default Home = ({navigation}) => {
         }
       ];
     
-    
-    
     return (
       <ScrollView>
           <View style={styles.container}>
@@ -81,13 +79,10 @@ export default Home = ({navigation}) => {
                     keyExtractor={(item) => item.id}
                   />
                 </View>
-                
-                </View>
+              </View>
               
           </View>
       </ScrollView>
-       
-        
     )
 }
 

@@ -20,8 +20,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default Transportation = ({navigation}) => {
 
     return (
-
-
           <View style={styles.container}>
             <View style={styles.topview}>
                   <Text style={{position:"absolute",top:5,textAlign:"center",fontSize:30,color:"#fff",fontWeight:"bold"}}>Flete</Text>
@@ -49,9 +47,6 @@ export default Transportation = ({navigation}) => {
                       <Text style={{marginLeft:5,fontWeight:"bold"}}>125562 km</Text>
                     </View>
                   </View>
-                  <View style={{ width:50,height:50,marginLeft:10,marginTop:10}}>
-                  <SvgQRCode value="http://example.com" />
-                  </View>
                 </View>
             </CustomCard>
               <Text style={{marginHorizontal:26,marginVertical:16,fontWeight:"bold",fontSize:20}}>Detalle Orden de Trabajo</Text>
@@ -76,19 +71,12 @@ export default Transportation = ({navigation}) => {
                     <TouchableOpacity style={{width:125,marginTop:10, backgroundColor:"#EBE7E6",borderRadius:8}}>
                         <Text style={{paddingVertical:10,fontWeight:"bold",textAlign:"center"}}>Combustible</Text>
                     </TouchableOpacity>
-                    
                         <Text style={{paddingVertical:10,fontWeight:"bold",textAlign:"center"}}>Petroleo</Text>
-                  
-                    
-
                     <Text style={{fontWeight:"bold"}}> 25 lt</Text>
                 </View>
               </View>
-
             </View>
           </View>
-          
-            
     )
   }
   

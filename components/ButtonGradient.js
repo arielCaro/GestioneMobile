@@ -1,43 +1,30 @@
-import React from "react";
-import { StyleSheet, Text, View, TextInput, Dimensions, TouchableOpacity} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+//component Button for icons to use in the camera
 
-export default function  ButtonGradient (props) {
+import * as React from 'react';
+import { StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+
+export default Button = ({icon, size, color, style, onPress }) => {
+
     return (
-        <TouchableOpacity style={styles.container} onPress={props.onPress}>
-            <LinearGradient
-                // Button Linear Gradient
-                colors={['#b85602', '#FFB677']}
-                start={{x: 0, y: 0}}
-                end={{x: 1, y: 1}}    
-                style={styles.button}
-                
-            >
-                <Text style={styles.text}> {props.title} </Text>
-            </LinearGradient>
+        <TouchableOpacity 
+            style={[styles.button, style]}
+            onPress={onPress}
+        >
+            <MaterialIcons 
+                name = {icon}
+                size={size? size : 28} //if size is passed in props we use it else we use 28
+                color={color ? color : '#f1f1f1'}
+            />
         </TouchableOpacity>
-    );
+    )
+
 }
 
 const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        width: 200,
-        marginTop: 25,
-    },
-
-    text: {
-      fontSize: 14,
-      color: '#fff',
-      fontWeight: 'bold',
-    },
-    button: {
-        width: '80%',
-        height: 50,
-        borderRadius: 25,
-        padding: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    
-  });
+  button : {
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+})

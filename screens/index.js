@@ -8,6 +8,7 @@ import scanner from './scanner'
 import welcome from './welcome'
 import workorder from './workorder'
 import trasportation from './trasportation'
+import addworkorder from './addworkorder'
 
 export {
     login,
@@ -19,5 +20,7 @@ export {
     scanner,
     welcome,
     workorder,
-    trasportation
+    trasportation,
+    addworkorder
+    
 }

@@ -19,6 +19,10 @@ import {dummyData, COLORS, SIZES, FONTS, icons, images } from '../constants'
 import SvgQRCode from 'react-native-qrcode-svg';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
  
+  
+
+export default WorkOrder = ({navigation}) => {
+
   const DATA = [
     {
       id: 1,
@@ -28,6 +32,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
       destino:"Puerto Coronel",
       price:"1.0",
       onPressHandler:()=>{
+        navigation.navigate('Transportations')
         console.log("payment ",{price:"1.0"});
       }
     },
@@ -39,6 +44,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
       destino:"Bodega Talca",
       price:"2.0",
       onPressHandler:()=>{
+        navigation.navigate('Transportations')
         console.log("payment ",{price:"2.0"});
       }
     },
@@ -50,6 +56,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
         destino:"Bodega Lider",
         price:"3.0",
         onPressHandler:()=>{
+          navigation.navigate('Transportations')
           console.log("payment ",{price:"3.0"});
         }
       },
@@ -61,6 +68,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
         destino:"Bodega ",
         price:"4.0",
         onPressHandler:()=>{
+          navigation.navigate('Transportations')
           console.log("payment ",{price:"4.0"});
         }
       },
@@ -72,6 +80,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
         destino:"Puerto Coronel",
         price:"5.0",
         onPressHandler:()=>{
+          navigation.navigate('Transportations')
           console.log("payment ",{price:"4.0"});
         }
       },
@@ -83,6 +92,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
         destino:"Bodega ",
         price:"6.0",
         onPressHandler:()=>{
+          navigation.navigate('Transportations')
           console.log("payment ",{price:"4.0"});
         }
       },
@@ -94,47 +104,50 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
         destino:"Puerto Coronel",
         price:"7.0",
         onPressHandler:()=>{
+          navigation.navigate('Transportations')
           console.log("payment ",{price:"4.0"});
         }
       }
   ];
 
-export default WorkOrder = ({navigation}) => {
     const scheduleItem = ({item}) => {
         return (
-        <View>
-            <View style={{flexDirection:"row",marginHorizontal:26,marginBottom:15,justifyContent:"space-between"}}>
-                <View style={{flexDirection:"row"}}>
-                    <Ionicons name="location-outline" size={15} color="#000"  />
-                    <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.origen}</Text>
-                    <Ionicons name="swap-horizontal-outline" size={15} color="#000"  />
-                    <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.destino}</Text>
-                </View>
-                <View>
-                    <TouchableOpacity onPress={item.onPressHandler} style={{backgroundColor:COLORS.primary,paddingHorizontal:15,borderRadius:5}}>
-                        <Ionicons  name="eye" size={15} color="#fff"  />
-                    </TouchableOpacity>
-                </View>
-            </View>     
-            <View style={{flexDirection:"row",marginHorizontal:26,marginBottom:10,justifyContent:"space-between"}}>
-                <View style={{flexDirection:"row"}}>
-                    <Ionicons name="timer-outline" size={15} color="#000"  />
-                    <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.departuretime}</Text>
-                    <Ionicons name="swap-horizontal-outline" size={15} color="#000"  />
-                    <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.arrivaltime}</Text>
-                </View>
-                <View>
-                  <TouchableOpacity onPress={item.onPressHandler} style={{backgroundColor:COLORS.red,paddingHorizontal:15,borderRadius:5}}>
-                      <Ionicons  name="trash" size={15} color="#fff"  />
-                  </TouchableOpacity>
-                </View>
-            </View>
-            
-        </View >
+          <ScrollView>
+              <View>
+                  <View style={{flexDirection:"row",marginHorizontal:26,marginBottom:15,justifyContent:"space-between"}}>
+                      <View style={{flexDirection:"row"}}>
+                          <Ionicons name="location-outline" size={15} color="#000"  />
+                          <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.origen}</Text>
+                          <Ionicons name="swap-horizontal-outline" size={15} color="#000"  />
+                          <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.destino}</Text>
+                      </View>
+                      <View>
+                          <TouchableOpacity onPress={item.onPressHandler} 
+                                            style={{backgroundColor:COLORS.primary,paddingHorizontal:15,borderRadius:5}}>
+                              <Ionicons  name="eye" size={15} color="#fff"  />
+                          </TouchableOpacity>
+                      </View>
+                  </View>     
+                  <View style={{flexDirection:"row",marginHorizontal:26,marginBottom:10,justifyContent:"space-between"}}>
+                      <View style={{flexDirection:"row"}}>
+                          <Ionicons name="timer-outline" size={15} color="#000"  />
+                          <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.departuretime}</Text>
+                          <Ionicons name="swap-horizontal-outline" size={15} color="#000"  />
+                          <Text style={{fontSize:15,fontWeight:"bold",marginHorizontal:10}}>{item.arrivaltime}</Text>
+                      </View>
+                      <View>
+                        <TouchableOpacity onPress={item.onPressHandler} style={{backgroundColor:COLORS.red,paddingHorizontal:15,borderRadius:5}}>
+                            <Ionicons  name="trash" size={15} color="#fff"  />
+                        </TouchableOpacity>
+                      </View>
+                  </View>
+                  
+              </View >
+        </ScrollView>
                );
       };
     return (
-      <ScrollView >
+  
         <View style={styles.container}>
           
           <View style={styles.topview}>
@@ -143,14 +156,20 @@ export default WorkOrder = ({navigation}) => {
             <View style={styles.bottomview}>
                 <CustomCard elevated={true} style={{backgroundColor:"#fff",marginHorizontal:24,marginTop:-180,padding:30,borderRadius:10}}>
                     <View>
-                        <TouchableOpacity style={{padding:7,margin:26,borderRadius:12,backgroundColor:COLORS.primary}}>
+                        <TouchableOpacity 
+                            style={{padding:7,margin:26,borderRadius:12,backgroundColor:COLORS.primary}}
+                            onPress={()=> navigation.navigate("AddWorkOrder")}
+                        >
                             <View style={{alignContent:'center', justifyContent:'center' }}>
                                 <Text style={{fontSize:25,textAlign:"center",fontWeight:"bold",color:"#fff", marginHorizontal:10}}>Ingresar Orden</Text>
                             </View>
                         </TouchableOpacity>    
                     </View>
                     <View>
-                        <TouchableOpacity style={{padding:7,margin:26,borderRadius:12,backgroundColor:COLORS.primary}}>
+                        <TouchableOpacity 
+                              style={{padding:7,margin:26,borderRadius:12,backgroundColor:COLORS.primary}}
+                              onPress={()=> navigation.navigate("Scanner")}
+                        >
                             <Text style={{fontSize:25,textAlign:"center",fontWeight:"bold",color:"#fff"}}>Escanear Orden</Text>
                         </TouchableOpacity>
                     </View>
@@ -169,7 +188,7 @@ export default WorkOrder = ({navigation}) => {
           
             
         </View>
-        </ScrollView>
+     
     )
 }
 

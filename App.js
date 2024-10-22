@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen'
 import Tabs from './navigations/tabs';
 
-import { home, scanner, workorder, login, register, trasportation } from './screens';
+import { home, scanner, workorder, login, register, trasportation, addworkorder } from './screens';
 import React from 'react';
 
 const Stack = createStackNavigator();
@@ -16,7 +16,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerShown: false
+          headerShown: true
         }}
         initialRouteName={'Home'}
       >
@@ -25,6 +25,34 @@ export default function App() {
           component={Tabs}
           options={{headerShown:false}}
         />
+         <Stack.Screen
+
+          screenOptions={{
+            headerShown: true
+          }}
+          name="AddWorkOrder"
+          component={addworkorder}
+          options={{headerShown:true}}
+        />
+
+        <Stack.Screen
+          screenOptions={{
+            headerShown: true
+          }}
+          name="Scanner"
+          component={scanner}
+          options={{headerShown:true}}
+        />
+
+        <Stack.Screen
+          screenOptions={{
+            headerShown: true
+          }}
+          name="Transportations"
+          component={trasportation}
+          options={{headerShown:true}}
+        />
+
         
       </Stack.Navigator>
     </NavigationContainer>
