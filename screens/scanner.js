@@ -25,7 +25,7 @@ export default Scanner = ({navigation}) => {
     const [previousImage, setPreviousImage] = useState(null);
     const cameraRef = useRef(null); 
 
-      //to load the last saved image when permissions change
+
     useEffect(() => {
         if(hasCameraPermission && hasCameraPermission.granted && hasMediaLibraryPermission && hasMediaLibraryPermission.status === 'granted') {
             getLastSavedImage();
@@ -39,12 +39,13 @@ export default Scanner = ({navigation}) => {
     {
         return (
         <View style={styles.container}>
-                <Text>We need camera and gallery permissions to continue.</Text>
+                <Text>
+                Necesitamos permisos de cámara y galería para continuar..</Text>
                 <TouchableOpacity style={styles.button} onPress={() => {
                     setHasCameraPermission();
                     setMediaLibraryPermission();
                 }} >
-                    <Text style={styles.buttonText}>Grant Permissions</Text>
+                    <Text style={styles.buttonText}>Permisos</Text>
                 </TouchableOpacity>
             </View>
         )
